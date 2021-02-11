@@ -43,6 +43,7 @@
 ## purchases テーブル
 
 |  Column  |    Type    |      Options      |
+|----------|------------|-------------------|
 |   user   | references | foreign_key: true |
 |   item   | references | foreign_key: true |
 
