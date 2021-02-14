@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2021-02-13T07:38:02.651Z" agent="5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.1 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="RL0CPxsSHYHxgQXxA-GY" version="14.3.1" type="embed">
+<mxfile host="65bd71144e" modified="2021-02-14T01:15:46.825Z" agent="5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.1 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="N1ElzciNaxvTnOVr6JHd" version="14.3.1" type="embed">
     <diagram id="8j5e3Bpu8pYRapp2U3LQ" name="Page-1">
-        <mxGraphModel dx="1759" dy="445" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="1">
+        <mxGraphModel dx="1537" dy="334" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="1">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -22,10 +22,10 @@
                 <mxCell id="7" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
                     <mxGeometry y="70" width="320" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="first_name" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" parent="7" vertex="1">
+                <mxCell id="8" value="last_name" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" parent="7" vertex="1">
                     <mxGeometry width="100" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="last_name" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" parent="7" vertex="1">
+                <mxCell id="9" value="first_name" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" parent="7" vertex="1">
                     <mxGeometry x="100" width="100" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="10" value="birth_day" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" parent="7" vertex="1">
@@ -34,10 +34,10 @@
                 <mxCell id="11" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
                     <mxGeometry y="110" width="320" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="first_name_kana" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=none;" parent="11" vertex="1">
+                <mxCell id="12" value="last_name_kana" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=none;" parent="11" vertex="1">
                     <mxGeometry width="100" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="last_name_kana" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=none;" parent="11" vertex="1">
+                <mxCell id="13" value="first_name_kana" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=none;" parent="11" vertex="1">
                     <mxGeometry x="100" width="100" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="14" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" parent="11" vertex="1">
