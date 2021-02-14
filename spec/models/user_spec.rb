@@ -52,14 +52,15 @@ RSpec.describe User, type: :model do
       end
 
       it 'passwordが全角だと登録できず、半角英数混合でないといけない' do
-        @user.password = "aaaaaa"
-        @user.password_confirmation = "aaaaaa"
+        @user.password = "aaああａａ"
+        @user.password_confirmation = "aaああａａ"
         @user.valid?
         expect(@user.errors.full_messages).to include("Password Include both letters and numbers.")
       end
 
       it 'passwordとpassword_confirmaitonが一致していないと登録できない' do
-        @user.password_confirmation = ""
+        @user.password = "aaaaaa"
+        @user.password_confirmation = "aaaaaaaa"
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
