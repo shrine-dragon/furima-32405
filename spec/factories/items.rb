@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :item do
     image           { Faker::Avatar.image }
     name            { Faker::Commerce.product_name }
-    description     { Faker::Lorem.sentece }
+    description     { Faker::Lorem.sentence }
     category_id     { Faker::Number.between(from: 1, to: 10) }
     quality_id      { Faker::Number.between(from: 1, to: 6) }
     burden_fee_id   { Faker::Number.between(from: 1, to: 2) }
