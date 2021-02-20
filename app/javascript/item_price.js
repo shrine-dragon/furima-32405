@@ -1,4 +1,4 @@
-const money_calc = () => {
+const price_calc = () => {
   const price = document.getElementById("item-price");
   price.addEventListener("input", () => {
     const priceValue = price.value;
@@ -7,8 +7,8 @@ const money_calc = () => {
     salesCommission.innerHTML = Math.floor(priceValue / 10);
     // 販売利益の計算
     const salesProfit = document.getElementById("profit");
-    const commission = priceValue / 10;
+    const commission = Math.floor(priceValue / 10);
     salesProfit.innerHTML = Math.floor(priceValue - commission);
   });
 };
-window.addEventListener("load", money_calc);
+window.addEventListener("load", price_calc);
