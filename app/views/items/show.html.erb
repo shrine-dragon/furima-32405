@@ -15,10 +15,10 @@
     </div>
     <div class="item-price-box">
       <span class="item-price">
-        <%= @item.price %>
+        ¥<%= @item.price %>
       </span>
       <span class="item-postage">
-        <%= @item.burden_fee_id %>
+        <%= @burdenFee.name %>
       </span>
     </div>
 
@@ -45,23 +45,23 @@
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
-          <td class="detail-value"><%= @item.category_id %></td>
+          <td class="detail-value"><%= @category.name %></td>
         </tr>
         <tr>
           <th class="detail-item">商品の状態</th>
-          <td class="detail-value"><%= @item.quality_id %></td>
+          <td class="detail-value"><%= @quality.name %></td>
         </tr>
         <tr>
           <th class="detail-item">配送料の負担</th>
-          <td class="detail-value"><%= @item.burden_fee_id %></td>
+          <td class="detail-value"><%= @burdenFee.name %></td>
         </tr>
         <tr>
           <th class="detail-item">発送元の地域</th>
-          <td class="detail-value"><%= @item.prefecture_id %></td>
+          <td class="detail-value"><%= @prefecture.name %></td>
         </tr>
         <tr>
           <th class="detail-item">発送日の目安</th>
-          <td class="detail-value"><%= @item.days_to_ship_id %></td>
+          <td class="detail-value"><%= @daysToShip.name %></td>
         </tr>
       </tbody>
     </table>
@@ -76,7 +76,6 @@
       </div>
     </div>
   </div>
-  <%# /商品の概要 %>
 
   <div class="comment-box">
     <form>
@@ -101,7 +100,7 @@
     </a>
   </div>
   <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
-  <a href="#" class="another-item"><%= "商品のカテゴリー名" %>をもっと見る</a>
+  <a href="#" class="another-item"><%= @category.name %>をもっと見る</a>
   <%# //詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
 </div>
 

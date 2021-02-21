@@ -19,7 +19,12 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id]) 
+    @item = Item.find(params[:id])
+    @category = Category.find_by(id: @item.category_id)
+    @quality = Quality.find_by(id: @item.quality_id)
+    @burdenFee = BurdenFee.find_by(id: @item.burden_fee_id)
+    @prefecture = Prefecture.find_by(id: @item.prefecture_id)
+    @daysToShip = DaysToShip.find_by(id: @item.days_to_ship_id)
   end
 
   private
