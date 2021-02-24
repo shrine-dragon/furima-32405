@@ -18,7 +18,7 @@
         ¥<%= @item.price %>
       </span>
       <span class="item-postage">
-        <%= BurdenFee.find(@item.burden_fee_id).name %>
+        <%= @item.burden_fee.name %>
       </span>
     </div>
 
