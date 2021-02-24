@@ -49,19 +49,19 @@
         </tr>
         <tr>
           <th class="detail-item">商品の状態</th>
-          <td class="detail-value"><%= Quality.find(@item.quality_id).name %></td>
+          <td class="detail-value"><%= @item.quality.name %></td>
         </tr>
         <tr>
           <th class="detail-item">配送料の負担</th>
-          <td class="detail-value"><%= BurdenFee.find(@item.burden_fee_id).name %></td>
+          <td class="detail-value"><%= @item.burden_fee.name %></td>
         </tr>
         <tr>
           <th class="detail-item">発送元の地域</th>
-          <td class="detail-value"><%= Prefecture.find(@item.prefecture_id).name %></td>
+          <td class="detail-value"><%= @item.prefecture.name %></td>
         </tr>
         <tr>
           <th class="detail-item">発送日の目安</th>
-          <td class="detail-value"><%= DaysToShip.find(@item.days_to_ship_id).name %></td>
+          <td class="detail-value"><%= @item.days_to_ship.name %></td>
         </tr>
       </tbody>
     </table>
