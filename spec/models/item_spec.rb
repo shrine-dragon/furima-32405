@@ -37,10 +37,10 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Category must be other than 0")
       end
 
-      it 'condition_idが空(--)だと保存できない' do
-        @item.condition_id = 0
+      it 'quality_idが空(--)だと保存できない' do
+        @item.quality_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition must be other than 0")
+        expect(@item.errors.full_messages).to include("Quality must be other than 0")
       end
 
       it 'burden_fee_idが空(--)だと保存できない' do

@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   has_one          :purechase
   has_one_attached :image
   belongs_to       :category 
-  belongs_to       :condition
+  belongs_to       :quality 
   belongs_to       :burden_fee 
   belongs_to       :prefecture 
   belongs_to       :days_to_ship
@@ -19,6 +19,6 @@ class Item < ApplicationRecord
 
   # active_hashのデータ
   with_options numericality: { other_than: 0, message: "must be other than 0" } do
-    validates :category_id, :condition_id, :burden_fee_id, :days_to_ship_id, :prefecture_id
+    validates :category_id, :quality_id, :burden_fee_id, :days_to_ship_id, :prefecture_id
   end
 end
