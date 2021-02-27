@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :move_to_root_path,  only:   [:edit, :update, :destroy]
 
   def index
-    @items = Item.includes(:user).order("created_at DESC")
+    @items = Item.includes(:user).order('created_at DESC')
   end
 
   def new
@@ -35,14 +35,14 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if @item.destroy
-      redirect_to root_path
-    end
+    redirect_to root_path if @item.destroy
   end
 
   private
+
   def item_params
-    params.require(:item).permit(:image, :name, :description, :category_id, :quality_id, :burden_fee_id, :prefecture_id, :days_to_ship_id, :price).merge(user_id: current_user.id)
+    params.require(:item).permit(:image, :name, :description, :category_id, :quality_id, :burden_fee_id, :prefecture_id,
+                                 :days_to_ship_id, :price).merge(user_id: current_user.id)
   end
 
   def set_item
@@ -50,8 +50,6 @@ class ItemsController < ApplicationController
   end
 
   def move_to_root_path
-    unless current_user.id == @item.user_id
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.id == @item.user_id
   end
 end
