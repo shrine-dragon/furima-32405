@@ -1,5 +1,5 @@
 class PurchasesController < ApplicationController
-  def new
+  def index
     @item_purchase = ItemPurchase.new
   end
  
