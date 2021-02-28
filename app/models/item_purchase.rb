@@ -11,11 +11,12 @@ class ItemPurchase
     validates :house_number
     validates :phone_number, numericality: { only_integer: true, message: 'Input only number' }
   end
+  
+  validates :phone_number, numericality: { with: /\A0\d{10,11}\z/, message: 'is out of range' }
 
   def save
+    purchase = Purchase.create(user_id: user_id, item_id: item_id)
     Address.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, house_number: house_number,
-                   building_name: building_name, phone_number: phone_number, purchase_id: purchase_id)
-
-    Purchase.create(user_id: user_id, item_id: item_id)
+                   building_name: building_name, phone_number: phone_number, purchase_id: purchase.id)
   end
 end
