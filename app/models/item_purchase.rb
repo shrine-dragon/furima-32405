@@ -1,7 +1,7 @@
 class ItemPurchase
   include ActiveModel::Model
   attr_accessor :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :user_id, :item_id,
-                :purchase_id
+                :purchase_id, :token
 
   # 空欄時のバリデーション
   with_options presence: true do
@@ -10,6 +10,7 @@ class ItemPurchase
     validates :city
     validates :house_number
     validates :phone_number, numericality: { only_integer: true, message: 'Input only number' }
+    validates :token
   end
   
   def save
