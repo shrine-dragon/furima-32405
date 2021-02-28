@@ -34,13 +34,13 @@ ActiveRecord::Schema.define(version: 2021_02_27_074131) do
   end
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "postal_code", null: false
+    t.string "postal_code", default: "", null: false
     t.integer "prefecture_id", null: false
-    t.string "city", null: false
-    t.string "house_number", null: false
-    t.string "building_name"
+    t.string "city", default: "", null: false
+    t.string "house_number", default: "", null: false
+    t.string "building_name", default: ""
     t.integer "phone_number", null: false
-    t.bigint "purchase_id"
+    t.bigint "purchase_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["purchase_id"], name: "index_addresses_on_purchase_id"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2021_02_27_074131) do
     t.integer "prefecture_id", null: false
     t.integer "days_to_ship_id", null: false
     t.integer "price", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["price"], name: "index_items_on_price"
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 2021_02_27_074131) do
   end
 
   create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "item_id"
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["item_id"], name: "index_purchases_on_item_id"
