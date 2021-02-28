@@ -5,12 +5,11 @@ class ItemPurchase
   # 空欄時のバリデーション
   with_options presence: true do
     validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'Input correctly' }
+    validates :prefecture_id, numericality: { other_than: 0, message: 'Select' }
     validates :city
     validates :house_number
     validates :phone_number, numericality: { only_integer: true, message: 'Input only number' }
   end
-  # 選択肢に関するバリデーション
-  validates :prefecture_id, numericality: { other_than: 0, message: 'Select' }
 
   def save
     purchase = Purchase.create
