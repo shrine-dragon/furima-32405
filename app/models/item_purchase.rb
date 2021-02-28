@@ -9,16 +9,13 @@ class ItemPurchase
     validates :house_number
     validates :phone_number, numericality: { only_integer: true, message: 'Input only number' }
   end
-  # 桁数に関するバリデーション
-  validates :phone_number,
-            numericality: { greater_than_or_equal_to: 10, less_than_or_equal_to: 11, message: 'is out of setting range' }
   # 選択肢に関するバリデーション
   validates :prefecture_id, numericality: { other_than: 0, message: 'Select' }
 
   def save
-    purchase = Purchase.new
-    user = User.new
-    item = Item.new
+    purchase = Purchase.create
+    user = User.create
+    item = Item.create
     Address.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, house_number: house_number,
                    building_name: building_name, purchase_id: purchase.id)
 
