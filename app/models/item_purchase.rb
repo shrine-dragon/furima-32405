@@ -1,6 +1,6 @@
 class ItemPurchase
   include ActiveModel::Model
-  attr_accessor :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number
+  attr_accessor :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :user_id, :item_id, :purchase_id
 
   # 空欄時のバリデーション
   with_options presence: true do
@@ -12,12 +12,9 @@ class ItemPurchase
   end
 
   def save
-    purchase = Purchase.create
-    user = User.create
-    item = Item.create
     Address.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, house_number: house_number,
-                   building_name: building_name, purchase_id: purchase.id)
+                   building_name: building_name, phone_number: phone_number, purchase_id: purchase_id)
 
-    Purchase.create(user_id: user.id, item_id: item.id)
+    Purchase.create(user_id: user_id, item_id: item_id)
   end
 end
