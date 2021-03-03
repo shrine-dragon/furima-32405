@@ -42,7 +42,7 @@ RSpec.describe ItemPurchase, type: :model do
         expect(@item_purchase.errors.full_messages).to include("Postal code Input correctly")
       end
 
-      it 'postal_codeに数字以外の値があると購入できない' do
+      it 'postal_codeに数字、ハイフン以外の値があると購入できない' do
         @item_purchase.postal_code = "あああaaaアアア"
         @item_purchase.valid?
         expect(@item_purchase.errors.full_messages).to include("Postal code Input correctly")
