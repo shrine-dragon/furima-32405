@@ -60,10 +60,10 @@ RSpec.describe ItemPurchase, type: :model do
         expect(@item_purchase.errors.full_messages).to include("City can't be blank")
       end
 
-      it 'house_numberが空だと購入できない' do
-        @item_purchase.house_number = ""
+      it 'addressesが空だと購入できない' do
+        @item_purchase.addresses = ""
         @item_purchase.valid?
-        expect(@item_purchase.errors.full_messages).to include("House number can't be blank")
+        expect(@item_purchase.errors.full_messages).to include("Addresses can't be blank")
       end
 
       it 'phone_numberが空だと購入できない' do
