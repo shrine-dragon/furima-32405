@@ -8,10 +8,14 @@ RSpec.describe ItemPurchase, type: :model do
   describe '商品購入機能の実装' do
     context '商品購入がうまくいく時' do
       it '全ての値が適切に入力されていれば購入できる' do
+        @item_purchase.user_id = 1
+        @item_purchase.item_id = 1
         expect(@item_purchase).to be_valid
       end
 
       it '建物名が入力されていなくても購入できる' do
+        @item_purchase.user_id = 1
+        @item_purchase.item_id = 1        
         @item_purchase.building_name = ''
         expect(@item_purchase).to be_valid
       end
@@ -79,19 +83,25 @@ RSpec.describe ItemPurchase, type: :model do
       end
 
       it 'phone_numberが9桁以下だと購入できない' do
-        @item_purchase.phone_number = 901_234_567
+        @item_purchase.phone_number = '901_234_567'
         @item_purchase.valid?
         expect(@item_purchase.errors.full_messages).to include('Phone number Input correctly')
       end
 
       it 'phone_numberが12桁以上だと購入できない' do
-        @item_purchase.phone_number = 901_234_567_891
+        @item_purchase.phone_number = '901_234_567_891'
         @item_purchase.valid?
         expect(@item_purchase.errors.full_messages).to include('Phone number Input correctly')
       end
 
       it 'phone_numberに数字以外の値があると購入できない' do
         @item_purchase.phone_number = 'あああaaaアアア'
+        @item_purchase.valid?
+        expect(@item_purchase.errors.full_messages).to include('Phone number Input only number')
+      end
+
+      it 'phone_numberが英数混合では購入できない' do
+        @item_purchase.phone_number = 'abcde12345'
         @item_purchase.valid?
         expect(@item_purchase.errors.full_messages).to include('Phone number Input only number')
       end
