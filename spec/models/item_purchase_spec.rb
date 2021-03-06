@@ -3,19 +3,17 @@ require 'rails_helper'
 RSpec.describe ItemPurchase, type: :model do
   before do
     @item_purchase = FactoryBot.build(:item_purchase)
+    @item_purchase.user_id = FactoryBot.build(:user)
+    @item_purchase.item_id = FactoryBot.build(:item)
   end
 
   describe '商品購入機能の実装' do
     context '商品購入がうまくいく時' do
       it '全ての値が適切に入力されていれば購入できる' do
-        @item_purchase.user_id = 1
-        @item_purchase.item_id = 1
         expect(@item_purchase).to be_valid
       end
 
       it '建物名が入力されていなくても購入できる' do
-        @item_purchase.user_id = 1
-        @item_purchase.item_id = 1        
         @item_purchase.building_name = ''
         expect(@item_purchase).to be_valid
       end
