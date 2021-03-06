@@ -11,6 +11,7 @@ class ItemPurchase
     validates :city
     validates :addresses
     validates :phone_number, numericality: { only_integer: true, message: 'Input only number' }
+    validates :user_id, :item_id, :purchase_id
   end
 
   def save
