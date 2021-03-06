@@ -40,7 +40,7 @@ RSpec.describe ItemPurchase, type: :model do
         @item_purchase.postal_code = '1234 - 5678'
         @item_purchase.valid?
         expect(@item_purchase.errors.full_messages).to include('Postal code Input correctly')
-      end      
+      end
 
       it 'postal_codeにハイフンが含まれていないと購入できない' do
         @item_purchase.postal_code = '1_234_567'
@@ -79,7 +79,7 @@ RSpec.describe ItemPurchase, type: :model do
       end
 
       it 'phone_numberが12桁以上だと購入できない' do
-        @item_purchase.phone_number = 901234567891
+        @item_purchase.phone_number = 901_234_567_891
         @item_purchase.valid?
         expect(@item_purchase.errors.full_messages).to include('Phone number Input correctly')
       end
