@@ -6,7 +6,7 @@ FactoryBot.define do
     city          { Faker::Address.city }
     addresses     { Faker::Address.street_address }
     building_name { Faker::Lorem.word }
-    phone_number  { Faker::Number.leading_zero_number(digits: 11) }
+    phone_number  { Faker::Number.leading_zero_number }
     user_id       { Faker::Number.number}
     item_id       { Faker::Number.number}
   end

@@ -14,6 +14,8 @@ class ItemPurchase
     validates :user_id, :item_id
   end
 
+  validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'Input correctly'}
+
   def save
     purchase = Purchase.create(user_id: user_id, item_id: item_id)
     address = Address.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, addresses: addresses,

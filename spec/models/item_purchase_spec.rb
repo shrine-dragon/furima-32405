@@ -31,13 +31,19 @@ RSpec.describe ItemPurchase, type: :model do
       end
 
       it 'postal_codeが6桁以下だと購入できない' do
-        @item_purchase.postal_code = 123 - 456
+        @item_purchase.postal_code = '123 - 456'
         @item_purchase.valid?
         expect(@item_purchase.errors.full_messages).to include('Postal code Input correctly')
       end
 
+      it 'postal_codeが8桁以上だと購入できない' do
+        @item_purchase.postal_code = '1234 - 5678'
+        @item_purchase.valid?
+        expect(@item_purchase.errors.full_messages).to include('Postal code Input correctly')
+      end      
+
       it 'postal_codeにハイフンが含まれていないと購入できない' do
-        @item_purchase.postal_code = 1_234_567
+        @item_purchase.postal_code = '1_234_567'
         @item_purchase.valid?
         expect(@item_purchase.errors.full_messages).to include('Postal code Input correctly')
       end
@@ -72,10 +78,28 @@ RSpec.describe ItemPurchase, type: :model do
         expect(@item_purchase.errors.full_messages).to include("Phone number can't be blank")
       end
 
+      it 'phone_numberが12桁以上だと購入できない' do
+        @item_purchase.phone_number = 901234567891
+        @item_purchase.valid?
+        expect(@item_purchase.errors.full_messages).to include('Phone number Input correctly')
+      end
+
       it 'phone_numberに数字以外の値があると購入できない' do
         @item_purchase.phone_number = 'あああaaaアアア'
         @item_purchase.valid?
         expect(@item_purchase.errors.full_messages).to include('Phone number Input only number')
+      end
+
+      it 'userが紐づいていないと購入できない' do
+        @item_purchase.user_id = nil
+        @item_purchase.valid?
+        expect(@item_purchase.errors.full_messages).to include("User can't be blank")
+      end
+
+      it 'itemが紐づいていないと購入できない' do
+        @item_purchase.item_id = nil
+        @item_purchase.valid?
+        expect(@item_purchase.errors.full_messages).to include("Item can't be blank")
       end
     end
   end
