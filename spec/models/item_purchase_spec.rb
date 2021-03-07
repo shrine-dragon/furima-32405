@@ -81,17 +81,23 @@ RSpec.describe ItemPurchase, type: :model do
       end
 
       it 'phone_numberが9桁以下だと購入できない' do
-        @item_purchase.phone_number = '901_234_567'
+        @item_purchase.phone_number = '012_345_678'
         @item_purchase.valid?
         expect(@item_purchase.errors.full_messages).to include('Phone number Input correctly')
       end
 
       it 'phone_numberが12桁以上だと購入できない' do
-        @item_purchase.phone_number = '901_234_567_891'
+        @item_purchase.phone_number = '0123_4567_8901'
         @item_purchase.valid?
         expect(@item_purchase.errors.full_messages).to include('Phone number Input correctly')
       end
 
+      it 'phone_numberの最初の文字が0以外だと購入できない' do
+        @item_purchase.phone_number = '123_456_7890'
+        @item_purchase.valid?
+        expect(@item_purchase.errors.full_messages).to include('Phone number Input correctly')
+      end
+      
       it 'phone_numberに数字以外の値があると購入できない' do
         @item_purchase.phone_number = 'あああaaaアアア'
         @item_purchase.valid?
