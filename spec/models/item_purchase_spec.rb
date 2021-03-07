@@ -34,19 +34,19 @@ RSpec.describe ItemPurchase, type: :model do
       end
 
       it 'postal_codeが6桁以下だと購入できない' do
-        @item_purchase.postal_code = '123 - 456'
+        @item_purchase.postal_code = '123-456'
         @item_purchase.valid?
         expect(@item_purchase.errors.full_messages).to include('Postal code Input correctly')
       end
 
       it 'postal_codeが8桁以上だと購入できない' do
-        @item_purchase.postal_code = '1234 - 5678'
+        @item_purchase.postal_code = '1234-5678'
         @item_purchase.valid?
         expect(@item_purchase.errors.full_messages).to include('Postal code Input correctly')
       end
 
       it 'postal_codeにハイフンが含まれていないと購入できない' do
-        @item_purchase.postal_code = '1_234_567'
+        @item_purchase.postal_code = '123_4567'
         @item_purchase.valid?
         expect(@item_purchase.errors.full_messages).to include('Postal code Input correctly')
       end
