@@ -97,7 +97,7 @@ RSpec.describe ItemPurchase, type: :model do
         @item_purchase.valid?
         expect(@item_purchase.errors.full_messages).to include('Phone number Input correctly')
       end
-      
+
       it 'phone_numberに数字以外の値があると購入できない' do
         @item_purchase.phone_number = 'あああaaaアアア'
         @item_purchase.valid?
