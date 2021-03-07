@@ -1,7 +1,7 @@
 class ItemPurchase
   include ActiveModel::Model
   attr_accessor :postal_code, :prefecture_id, :city, :addresses, :building_name, :phone_number, :user_id, :item_id,
-                :purchase_id, :token
+                :token
 
   # 空欄時のバリデーション
   with_options presence: true do
