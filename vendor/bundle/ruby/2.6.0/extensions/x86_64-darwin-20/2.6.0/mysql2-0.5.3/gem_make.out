@@ -4,7 +4,11 @@ current directory: /Users/shrine-dragon3839/projects/furima-32405/vendor/bundle/
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 /Users/shrine-dragon3839/.rbenv/versions/2.6.5/bin/ruby -I /Users/shrine-dragon3839/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20210320-85679-82bpz8.rb extconf.rb --with-mysql-config\=/usr/local/opt/mysql@5.6/bin/mysql_config --with-ldflags\=-L/usr/local/opt/openssl/lib --with-cppflags\=-I/usr/local/opt/openssl/include
+=======
+/Users/shrine-dragon3839/.rbenv/versions/2.6.5/bin/ruby -I /Users/shrine-dragon3839/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20210317-69374-ek5pol.rb extconf.rb --with-ldflags\=-L/usr/local/opt/openssl/lib --with-cppflags\=-I/usr/local/opt/openssl/include
+>>>>>>> Stashed changes
 =======
 /Users/shrine-dragon3839/.rbenv/versions/2.6.5/bin/ruby -I /Users/shrine-dragon3839/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20210317-69374-ek5pol.rb extconf.rb --with-ldflags\=-L/usr/local/opt/openssl/lib --with-cppflags\=-I/usr/local/opt/openssl/include
 >>>>>>> Stashed changes
@@ -63,7 +67,11 @@ make "DESTDIR=" install
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 /usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20210320-85679-bzgj6z/mysql2
+=======
+/usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20210317-69374-r5zka0/mysql2
+>>>>>>> Stashed changes
 =======
 /usr/bin/install -c -m 0755 mysql2.bundle ./.gem.20210317-69374-r5zka0/mysql2
 >>>>>>> Stashed changes
